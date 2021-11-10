@@ -1,0 +1,38 @@
+[
+    {
+      "name": "Food Go Special",
+      "price": 20,
+      "time": 15,
+      "image": "https://i.ibb.co/hgs7y3K/foodgo-spical.jpg"
+    },
+    {
+      "name": "Asia Food",
+      "price": 23,
+      "time": 45,
+      "image": "https://i.ibb.co/2jM07PJ/asian.jpg"
+    },
+    {
+      "name": "Raw Meat",
+      "price": 30,
+      "time": 20,
+      "image": "https://i.ibb.co/s3QPNFR/meat.jpg"
+    },
+    {
+      "name": "Hot Pizza",
+      "price": 25,
+      "time": 30,
+      "image": "https://i.ibb.co/j4fFkr6/pizza.jpg"
+    },
+    {
+      "name": "Organic Veg",
+      "price": 10,
+      "time": 40,
+      "image": "https://i.ibb.co/cgGnQZg/veg.jpg"
+    },
+    {
+      "name": "Fish",
+      "price": 33,
+      "time": 50,
+      "image": "https://i.ibb.co/F4myqRn/fishfood.jpg"
+    }
+  ]
