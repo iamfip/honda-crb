@@ -3,8 +3,9 @@ import "./Footer.css"
 
 const Footer = () => {
     return (
-        <div>
-            <h2>Its Foodter </h2>
+        <div className="footerbg text-white fixed-bottom">
+          <h5 className="lh-lg"> Developed by @ <a style={{textDecoration:"none", color:"tomato"}} href="https://github.com/iamfip">Farhan Ishrak</a></h5>
+
         </div>
     );
 };

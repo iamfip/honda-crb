@@ -1,8 +1,18 @@
 import React from 'react';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    useParams,
+    useRouteMatch
+  } from "react-router-dom";
 import Footer from '../../Shared/Footer/Footer';
 import Header from '../../Shared/Header/Header';
 
-const Products = () => {
+const Dashboard = () => {
+    let { path, url } = useRouteMatch();
+
     return (
         <div>
             <Header></Header>
@@ -12,4 +22,4 @@ const Products = () => {
     );
 };
 
-export default Products;
+export default Dashboard;
