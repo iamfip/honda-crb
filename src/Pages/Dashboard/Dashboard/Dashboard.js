@@ -1,23 +1,32 @@
-import React from 'react';
+import React from "react";
 import {
-    BrowserRouter as Router,
     Switch,
     Route,
     Link,
-    useParams,
-    useRouteMatch
-  } from "react-router-dom";
-import Footer from '../../Shared/Footer/Footer';
-import Header from '../../Shared/Header/Header';
+    useRouteMatch,
+} from "react-router-dom";
+import Review from "../Review/Review"
+import Footer from "../../Shared/Footer/Footer";
+import Header from "../../Shared/Header/Header";
 
 const Dashboard = () => {
     let { path, url } = useRouteMatch();
 
     return (
         <div>
-            <Header></Header>
-            
-            <Footer></Footer>
+            <ul>
+                <li>
+                    <Link to={`${url}/review`}>Review</Link>
+                </li>
+               
+            </ul>
+
+            <Switch>
+                <Route exact path={`${path}/review`} >
+                    <Review></Review>
+
+                </Route>
+            </Switch>
         </div>
     );
 };

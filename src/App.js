@@ -5,6 +5,9 @@ import Home from "./Pages/Home/Home/Home";
 import Products from "./Pages/Products/Products/Products";
 import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
 import Review from "./Pages/Dashboard/Review/Review";
+import AddProducts from "./Pages/Dashboard/AddProducts/AddProducts";
+import Login from "./Pages/Login/Login/Login";
+import Register from "./Pages/Login/Register/Register";
 
 function App() {
     return (
@@ -18,14 +21,22 @@ function App() {
                         <Home></Home>
                     </Route>
                     <Route exact path="/products">
+
                       <Products></Products>
+                    </Route>
+                    <Route exact path="/register">
+                        <Register></Register>
+                    </Route>
+                    <Route exact path="/login">
+                        <Login></Login>
                     </Route>
                     <Route exact path="/dashboard">
                       <Dashboard></Dashboard>
                     </Route>
-                    <Route exact path="/review">
-                        <Review></Review>
+                    <Route exact path="/addProduct">
+                        <AddProducts></AddProducts>
                     </Route>
+                    
                 </Switch>
             </Router>
         </div>
