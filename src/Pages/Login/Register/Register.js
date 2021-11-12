@@ -1,18 +1,37 @@
 import React from "react";
+import swal from 'sweetalert';
 import { useForm } from "react-hook-form";
+import { useHistory } from "react-router-dom";
+
+import useAuth from "../../../contexts/useAuth";
 
 const Register = () => {
+    const { register, handleSubmit, watch, errors ,resetField} = useForm();
+    const history = useHistory();
+    const { handleUserRegister, user } = useAuth();
+    
+    console.log(history);
 
-    const { register, handleSubmit, watch, errors } = useForm();
-    const onSubmit = (data) => {
-        // handleUserRegister(data.email, data.password);
-        console.log(data);
-      };
+    const onSubmit = (data,e) => {
+        if(data.password !== data.password2){
+            swal("Your password did not match !");
+            return;
+        }
+        else{
+            swal("Congrats")
+        }
+
+        handleUserRegister(data.email, data.password, data.name, history);
+        // console.log(data.email);
+        e.target.reset();
+        console.log(history);
+    };
+
+
+    //------------ UI Render Section --------------// 
+
     return (
-        <div
-            className="vh-100"
-            // style={{backgroundImage:`url("https://i.ibb.co/CBccXz0/login.jpg")`,backgroundPosition: "center"  }}
-        >
+        <div className="vh-100">
             <div className="container">
                 <div className="my-5">
                     <h2>Please Register </h2>
@@ -24,6 +43,7 @@ const Register = () => {
                                 placeholder="Name"
                                 type="text"
                                 {...register("name", { required: true })}
+                                
                             />
                             <input
                                 className="input-field w-75 p-2 mb-3"
@@ -39,6 +59,13 @@ const Register = () => {
                                 type="password"
                                 placeholder="Password"
                                 {...register("password", { required: true })}
+                            />
+                            <input
+                                className="input-field  w-75 p-2 mb-3"
+                                name="password2"
+                                type="password"
+                                placeholder="Retype Password"
+                                {...register("password2", { required: true })}
                             />
                             <br />
 

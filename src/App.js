@@ -8,10 +8,12 @@ import Review from "./Pages/Dashboard/Review/Review";
 import AddProducts from "./Pages/Dashboard/AddProducts/AddProducts";
 import Login from "./Pages/Login/Login/Login";
 import Register from "./Pages/Login/Register/Register";
+import AuthProvider from "./contexts/AuthProvider";
 
 function App() {
     return (
         <div className="App">
+            <AuthProvider>
             <Router>
                 <Switch>
                     <Route exact path="/">
@@ -39,6 +41,7 @@ function App() {
                     
                 </Switch>
             </Router>
+            </AuthProvider>
         </div>
     );
 }
