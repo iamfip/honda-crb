@@ -17,7 +17,7 @@ useEffect(() => {
                         <Card>
                             {/* <Card.Img variant="top" src={pd.name} /> */}
                             <Card.Body>
-                                <Card.Title><b>{pd.Name}</b></Card.Title>
+                                <Card.Title><b>{pd.name}</b></Card.Title>
                                 <Card.Text>
                                     <p> {pd.review}</p>
                                 </Card.Text>

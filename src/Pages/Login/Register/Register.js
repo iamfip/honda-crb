@@ -1,34 +1,33 @@
 import React from "react";
-import swal from 'sweetalert';
+import swal from "sweetalert";
 import { useForm } from "react-hook-form";
-import { useHistory } from "react-router-dom";
+import { Link, } from "react-router-dom";
 
 import useAuth from "../../../contexts/useAuth";
 
 const Register = () => {
-    const { register, handleSubmit, watch, errors ,resetField} = useForm();
-    const history = useHistory();
+    const { register, handleSubmit, watch, errors, resetField } = useForm();
+    // const history = useHistory();
+   
     const { handleUserRegister, user } = useAuth();
-    
-    console.log(history);
 
-    const onSubmit = (data,e) => {
-        if(data.password !== data.password2){
+    // console.log(history);
+
+    const onSubmit = (data, e) => {
+        if (data.password !== data.password2) {
             swal("Your password did not match !");
             return;
-        }
-        else{
-            swal("Congrats")
+        } else {
+            swal("Congrats");
         }
 
-        handleUserRegister(data.email, data.password, data.name, history);
+        handleUserRegister(data.email, data.password, data.name);
         // console.log(data.email);
         e.target.reset();
-        console.log(history);
+        // console.log(history);
     };
 
-
-    //------------ UI Render Section --------------// 
+    //------------ UI Render Section --------------//
 
     return (
         <div className="vh-100">
@@ -43,7 +42,6 @@ const Register = () => {
                                 placeholder="Name"
                                 type="text"
                                 {...register("name", { required: true })}
-                                
                             />
                             <input
                                 className="input-field w-75 p-2 mb-3"
@@ -74,6 +72,18 @@ const Register = () => {
                                 type="submit"
                                 value="Register"
                             />
+                            <br />
+                            <br />
+                            <h4>
+                                Already Register ?{" "}
+                                <Link
+                                    to="/login"
+                                    style={{ textDecoration: "none" }}
+                                >
+                                    {" "}
+                                    Please Login !{" "}
+                                </Link>{" "}
+                            </h4>
                         </form>
                     </div>
                 </div>
