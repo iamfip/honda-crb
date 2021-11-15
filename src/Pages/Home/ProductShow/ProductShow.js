@@ -5,7 +5,7 @@ import "./ProductShow.css"
 const ProductShow = () => {
     const [productShow, setProductShow] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/allProducts")
+        fetch("https://crafty-pottery.herokuapp.com/allProducts")
             .then((res) => res.json())
             .then((data) => setProductShow(data));
     }, []);

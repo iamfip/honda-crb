@@ -23,7 +23,7 @@ const Purchage = () => {
         data.productName=product.name;
         data.status = "pending";
         console.log(data);
-        fetch("http://localhost:5000/addOrders", {
+        fetch("https://crafty-pottery.herokuapp.com/addOrders", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),
@@ -34,7 +34,7 @@ const Purchage = () => {
     };
 
     useEffect(() => {
-        const url = `http://localhost:5000/singleProduct/${productId}`;
+        const url = `https://crafty-pottery.herokuapp.com/singleProduct/${productId}`;
         console.log(url);
         fetch(url)
             .then((res) => res.json())

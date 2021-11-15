@@ -12,7 +12,7 @@ const AddProducts = () => {
         formState: { errors },
     } = useForm();
     const onSubmit = (data) => {
-        fetch("http://localhost:5000/allProducts", {
+        fetch("https://crafty-pottery.herokuapp.com/allProducts", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),
